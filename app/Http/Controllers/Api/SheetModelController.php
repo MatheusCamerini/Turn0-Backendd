@@ -34,7 +34,7 @@ class SheetModelController extends Controller
             'schema' => ['required', 'array', 'min:1'],
             'is_public' => ['sometimes', 'boolean'],
         ]);
-
+        $validated['is_public'] = true;
         $model = SheetModel::create([
             'user_id' => $request->user()->id,
             'title' => $validated['title'],
